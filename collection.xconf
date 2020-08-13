@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+    
+    <index 
+            xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" 
+            xmlns:atom="http://www.w3.org/2005/Atom"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:ukm="http://www.legislation.gov.uk/namespaces/metadata"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        
+        
+        <!-- full text indexes -->
+        
+        <lucene>
+            <text qname="dc:title"/>
+            <text qname="dc:description"/>
+            
+            <text qname="akn:preface">
+                <inline qname="akn:a"/>
+                <inline qname="akn:abbr"/>
+                <inline qname="akn:b"/>
+                <inline qname="akn:i"/>
+                <inline qname="akn:sub"/>
+                <inline qname="akn:sup"/>
+                <inline qname="akn:u"/>
+            </text>
+            <text qname="akn:shortTitle">
+                <inline qname="akn:a"/>
+                <inline qname="akn:abbr"/>
+                <inline qname="akn:b"/>
+                <inline qname="akn:i"/>
+                <inline qname="akn:sub"/>
+                <inline qname="akn:sup"/>
+                <inline qname="akn:u"/>
+            </text>
+            <text qname="akn:longTitle">
+                <inline qname="akn:a"/>
+                <inline qname="akn:abbr"/>
+                <inline qname="akn:b"/>
+                <inline qname="akn:i"/>
+                <inline qname="akn:sub"/>
+                <inline qname="akn:sup"/>
+                <inline qname="akn:u"/>
+            </text>
+            
+            <text qname="akn:body">
+                <ignore qname="akn:num"/>
+                
+                <inline qname="akn:a"/>
+                <inline qname="akn:abbr"/>
+                <inline qname="akn:b"/>
+                <inline qname="akn:i"/>
+                <inline qname="akn:sub"/>
+                <inline qname="akn:sup"/>
+                <inline qname="akn:u"/>
+            </text>
+            
+            <text qname="akn:hcontainer">
+                <ignore qname="akn:num"/>
+                
+                <inline qname="akn:a"/>
+                <inline qname="akn:abbr"/>
+                <inline qname="akn:b"/>
+                <inline qname="akn:i"/>
+                <inline qname="akn:sub"/>
+                <inline qname="akn:sup"/>
+                <inline qname="akn:u"/>
+            </text>
+            
+            <text qname="section">
+                <ignore qname="akn:num"/>
+                
+                <inline qname="akn:a"/>
+                <inline qname="akn:abbr"/>
+                <inline qname="akn:b"/>
+                <inline qname="akn:i"/>
+                <inline qname="akn:sub"/>
+                <inline qname="akn:sup"/>
+                <inline qname="akn:u"/>
+            </text>
+            
+            <text qname="akn:subsection">
+                <ignore qname="akn:num"/>
+                
+                <inline qname="akn:a"/>
+                <inline qname="akn:abbr"/>
+                <inline qname="akn:b"/>
+                <inline qname="akn:i"/>
+                <inline qname="akn:sub"/>
+                <inline qname="akn:sup"/>
+                <inline qname="akn:u"/>
+            </text>
+            
+            <text qname="akn:heading">
+                <ignore qname="akn:num"/>
+                
+                <inline qname="akn:a"/>
+                <inline qname="akn:abbr"/>
+                <inline qname="akn:b"/>
+                <inline qname="akn:i"/>
+                <inline qname="akn:sub"/>
+                <inline qname="akn:sup"/>
+                <inline qname="akn:u"/>
+            </text>
+        </lucene>
+        
+        
+        <!-- range indexes -->
+        <range>
+            <create qname="akn:FRBRauthor" type="xs:string"/>
+            <create qname="akn:FRBRuri" type="xs:string"/>
+            
+            <create qname="dc:identifier" type="xs:string"/>
+            <create qname="dc:date" type="xs:date"/>
+            <create qname="dc:publisher" type="xs:string"/>
+            <create qname="dc:modified" type="xs:date"/>
+            
+            <create qname="ukm:Year" type="xs:integer"/>
+            <create qname="ukm:EnactmentDate" type="xs:date"/>
+            
+            <create qname="atom:link">
+                <field name="rel" match="@rel" type="xs:string"/>
+                <field name="type" match="@type" type="xs:string"/>
+            </create>
+            
+            <create qname="akn:num" type="xs:string"/>
+            
+            <create qname="@eId" type="xs:string"/>
+        </range>
+        
+    </index>
+        
+</collection>

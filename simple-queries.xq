@@ -9,6 +9,8 @@ xquery version "3.1";
  : @author Adam Retter <adam@evolvedbinary.com>
  :)
 
+import module namespace ft = "http://exist-db.org/xquery/lucene";
+
 declare namespace akn = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0";
 declare namespace atom = "http://www.w3.org/2005/Atom";
 declare namespace dc = "http://purl.org/dc/elements/1.1/";

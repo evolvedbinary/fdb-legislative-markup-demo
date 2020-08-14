@@ -136,7 +136,7 @@ let $keywords := "school"
 let $modified-after := xs:date("2020-01-01")
 
     let $search-results := 
-        for $act in collection("/db/ukpga")//akn:akomaNtoso/akn:act[ft:query(akn:preface, $keywords)][akn:meta/akn:proprietary/dc:modified gt $modified-after]
+        for $act in collection("/db/ukpga")//akn:akomaNtoso/akn:act[ft:query(akn:preface|akn:body, $keywords)][akn:meta/akn:proprietary/dc:modified gt $modified-after]
         let $preface := $act//akn:preface
         let $short-title := string-join($preface//akn:shortTitle//text(), "")
         let $long-title := string-join($preface/akn:longTitle//text(), "")

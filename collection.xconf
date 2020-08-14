@@ -115,8 +115,12 @@
             <create qname="dc:publisher" type="xs:string"/>
             <create qname="dc:modified" type="xs:date"/>
             
-            <create qname="ukm:Year" type="xs:integer"/>
-            <create qname="ukm:EnactmentDate" type="xs:date"/>
+            <create qname="ukm:Year">
+                <field name="Value" match="@Value" type="xs:integer"/>
+            </create>
+            <create qname="ukm:EnactmentDate">
+                <field name="Value" match="@Value" type="xs:date"/>
+            </create>
             
             <create qname="atom:link">
                 <field name="rel" match="@rel" type="xs:string"/>
